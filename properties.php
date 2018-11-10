@@ -213,7 +213,7 @@ if (isset($_GET['search'])) {
                 <div class="section">
                     <div class="row">
                         <div class="col l2 m2 s12 topped topped-filters fixme">
-<!--                            <form id="filterData">
+                            <form id="filterData">
                                 <div class="input-field col s12 bgWhite card-eff">
                                     <select id="category" class="filter">
                                         <option value="" disabled selected>Select Category</option>
@@ -225,20 +225,7 @@ if (isset($_GET['search'])) {
                                     </select>
                                     <label style="color: #4a148c;">Choose Category</label>
                                 </div>
-                                <div class="input-field col s12 bgWhite card-eff">
-                                    <select id="district" class="filter">
-                                        <option value="" disabled selected>Select District</option>
-                                        <option value="" disabled >Please Select Category First</option>
-                                    </select>
-                                    <label style="color: #4a148c;">Choose District</label>
-                                </div>
-                                <div class="input-field col s12 bgWhite card-eff">
-                                    <select id="area" class="filter">
-                                        <option value="" disabled selected>Select Area</option>
-                                        <option value="" disabled >Please Select District First</option>
-                                    </select>
-                                    <label style="color: #4a148c;">Choose Area</label>
-                                </div>
+                                
 
                                 <div class="input-field col s12 bgWhite card-eff" id="budget" style="margin-top: 0;">
                                     <label style="font-size: 0.8rem; color: #4a148c;">Select Budget</label>
@@ -250,11 +237,11 @@ if (isset($_GET['search'])) {
                                     <span style="color: #4a148c">to</span>
                                     <input id="input1" style="color: #e040fb;" readonly>
                                 </div>
-                            </form>-->
+                            </form>
                         </div>
 
                         <nav id='moreF' class="col l7 m7 s12 offset-l2 fixme white" style="z-index: 9999; border: 1px solid #e040fb; box-shadow: none;">
-<!--                            <div class="nav-wrapper">
+                            <div class="nav-wrapper">
                                 <span class="brand-logo" style="font-size: larger;">More Filters:</span>
                                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                                     <li class="forAp mFill">
@@ -378,32 +365,32 @@ if (isset($_GET['search'])) {
                                             </select>
                                         </div>
                                     </li>
-                                    <li class="forSh mFill">
-                                        <div class="input-field col s12">
-                                            <select id="Sh2" class="filter">
-                                                <option value="" disabled selected>Number of Baths</option>
-                                                <option value="null">Any Bath option</option>
-                                                <option value="1">1 Bath(s)</option>
-                                                <option value="2">2 Bath(s)</option>
-                                                <option value="3">3 Bath(s)</option>
-                                                <option value="4">4 Bath(s)</option>
-                                            </select>
-                                        </div>
-                                    </li>
-                                    <li class="forSh mFill">
-                                        <div class="input-field col s12">
-                                            <select id="Sh3" class="filter">
-                                                <option value="" disabled selected>Parking Space</option>
-                                                <option value="null">Any Parking option</option>
-                                                <option value="1">1 Parking(s)</option>
-                                                <option value="2">2 Parking(s)</option>
-                                                <option value="3">3 Parking(s)</option>
-                                                <option value="4">4 Parking(s)</option>
-                                            </select>
-                                        </div>
-                                    </li>
+                                    <!--                                    <li class="forSh mFill">
+                                                                            <div class="input-field col s12">
+                                                                                <select id="Sh2" class="filter">
+                                                                                    <option value="" disabled selected>Number of Baths</option>
+                                                                                    <option value="null">Any Bath option</option>
+                                                                                    <option value="1">1 Bath(s)</option>
+                                                                                    <option value="2">2 Bath(s)</option>
+                                                                                    <option value="3">3 Bath(s)</option>
+                                                                                    <option value="4">4 Bath(s)</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </li>-->
+                                    <!--                                    <li class="forSh mFill">
+                                                                            <div class="input-field col s12">
+                                                                                <select id="Sh3" class="filter">
+                                                                                    <option value="" disabled selected>Parking Space</option>
+                                                                                    <option value="null">Any Parking option</option>
+                                                                                    <option value="1">1 Parking(s)</option>
+                                                                                    <option value="2">2 Parking(s)</option>
+                                                                                    <option value="3">3 Parking(s)</option>
+                                                                                    <option value="4">4 Parking(s)</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </li>-->
                                 </ul>
-                            </div>-->
+                            </div>
                         </nav>
 
                         <div id="propList" class="col l7 m7 s12 offset-l2" data-last="10">
@@ -562,14 +549,22 @@ if (isset($_GET['search'])) {
                         }
 
                     });
-                    
+
                     function mFilterZ(catZ) {
-                $('.mFill').hide();
-                if(catZ == 'apartment'){$('.forAp').show();}
-                if(catZ == 'house'){$('.forHs').show();}
-                if(catZ == 'office'){$('.forOf').show();}
-                if(catZ == 'shop'){$('.forSh').show();}
-            }
+                        $('.mFill').hide();
+                        if (catZ == 'apartment') {
+                            $('.forAp').show();
+                        }
+                        if (catZ == 'house') {
+                            $('.forHs').show();
+                        }
+                        if (catZ == 'office') {
+                            $('.forOf').show();
+                        }
+                        if (catZ == 'shop') {
+                            $('.forSh').show();
+                        }
+                    }
 
                     var cat = '<?php echo $q1; ?>';
                     var dis = '<?php echo $q2; ?>';
@@ -583,7 +578,7 @@ if (isset($_GET['search'])) {
                     districtOpt(cat);
                     areaOpt(cat, dis);
                     $('select').material_select();
-                    
+
                     if (srch == '') {
                         showList(cat, dis, ara, 0, 50000);
                     } else {
@@ -853,5 +848,4 @@ if (isset($_GET['search'])) {
 
     </body>
 </html>
-
 
