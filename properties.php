@@ -226,6 +226,14 @@ if (isset($_GET['search'])) {
                                     <label style="color: #4a148c;">Choose Category</label>
                                 </div>
                                 
+                                <div class="input-field col s12 bgWhite card-eff">
+                                    <select id="district" class="filter">
+                                        <option value="" disabled selected>Select District</option>
+                                        <option value="" disabled >Please Select Category First</option>
+                                    </select>
+                                    <label style="color: #4a148c;">Choose District</label>
+                                </div>
+                                
 
                                 <div class="input-field col s12 bgWhite card-eff" id="budget" style="margin-top: 0;">
                                     <label style="font-size: 0.8rem; color: #4a148c;">Select Budget</label>
