@@ -566,7 +566,7 @@ if (isset($_GET['search'])) {
                         }
                     }
 
-                    var cat = '<?php echo $q1; ?>';
+                    var cat = '<?php echo $q1; ?>'; // ? //
                     var dis = '<?php echo $q2; ?>';
                     var ara = '<?php echo $q3; ?>';
                     var srch = '<?php echo $q0; ?>';
