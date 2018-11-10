@@ -234,6 +234,14 @@ if (isset($_GET['search'])) {
                                     <label style="color: #4a148c;">Choose District</label>
                                 </div>
                                 
+                                <div class="input-field col s12 bgWhite card-eff">
+                                    <select id="area" class="filter">
+                                        <option value="" disabled selected>Select Area</option>
+                                        <option value="" disabled >Please Select District First</option>
+                                    </select>
+                                    <label style="color: #4a148c;">Choose Area</label>
+                                </div>
+                                
 
                                 <div class="input-field col s12 bgWhite card-eff" id="budget" style="margin-top: 0;">
                                     <label style="font-size: 0.8rem; color: #4a148c;">Select Budget</label>
@@ -651,6 +659,8 @@ if (isset($_GET['search'])) {
                         mFilterZ(this.value);
                         districtOpt(this.value);
                         $('#district').val(null);//reset
+                        $('#area').val(null);//reset
+                        areaOpt(this.value, $('#district').val());
                         showList(this.value, $('#district').val(), $('#area').val(), faultz0, faultz1, $('#bed').val(), $('#bath').val(), $('#park').val());
                     });
                     $('#district').on('change', function () {
@@ -795,6 +805,7 @@ if (isset($_GET['search'])) {
                         //console.log(this.responseText);
                     }
                 }
+                
                 xmlhttp.open("GET", "getDistrictOpt.php?q1=" + q1, true);
                 xmlhttp.send();
             }
@@ -817,6 +828,8 @@ if (isset($_GET['search'])) {
                         //console.log(this.responseText);
                     }
                 }
+                console.log(q1);
+                console.log(q2);
                 xmlhttp.open("GET", "getAreaOpt.php?q1=" + q1 + "&q2=" + q2, true);
                 xmlhttp.send();
             }
