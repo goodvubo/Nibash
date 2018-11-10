@@ -14,9 +14,10 @@ $_q8 = intval($_GET['q8']);
 $_ord = "id";
 $orderBy = " ORDER BY " . $_ord;
 
-$limit = " LIMIT 10";
+$limit = " LIMIT 0, 10";
 if (isset($_GET['l'])) {
     $_l = intval($_GET['l']);
+    $_l *= 10;
     if ($_l > 0) {
         $limit = " LIMIT " . $_l . ", 10";
     }

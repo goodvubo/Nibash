@@ -409,7 +409,7 @@ if (isset($_GET['search'])) {
                             </div>
                         </nav>
 
-                        <div id="propList" class="col l7 m7 s12 offset-l2" data-last="10">
+                        <div id="propList" class="col l7 m7 s12 offset-l2" data-last="1">
                             <!--                            <h4 class="purple-text text-accent-2">Explore</h4>-->
 
                             <div id="circleLoader" class="preloader-wrapper small active">
@@ -560,7 +560,7 @@ if (isset($_GET['search'])) {
                                 var v8 = $('#park').val();
                                 xmlhttp.open("GET", "getList.php?q1=" + v1 + "&q2=" + v2 + "&q3=" + v3 + "&q4=" + v4 + "&q5=" + v5 + "&q6=" + v6 + "&q7=" + v7 + "&q8=" + v8 + "&l=" + $("#propList").attr("data-last"), true);
                                 xmlhttp.send();
-                                $("#propList").attr("data-last", parseInt($("#propList").attr("data-last")) + 10);
+                                $("#propList").attr("data-last", parseInt($("#propList").attr("data-last")) + 1);
                             }
                         }
 
@@ -714,7 +714,7 @@ if (isset($_GET['search'])) {
         <script>
             function searchList(q1) {
                 try {
-                    $("#propList").attr("data-last", 10);
+                    $("#propList").attr("data-last", 1);
                     map.panTo(new google.maps.LatLng(23.777176, 90.399452));
                     map.setOptions({zoom: 6});
                     marker.setMap(null);
@@ -751,7 +751,7 @@ if (isset($_GET['search'])) {
         <script>
             function showList(q1, q2, q3, q4, q5, q6, q7, q8) {
                 try {
-                    $("#propList").attr("data-last", 10);
+                    $("#propList").attr("data-last", 1);
                     map.panTo(new google.maps.LatLng(23.777176, 90.399452));
                     map.setOptions({zoom: 6});
                     marker.setMap(null);
